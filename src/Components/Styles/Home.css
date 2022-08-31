@@ -60,6 +60,7 @@
     border: none;
     border-radius: 1vh;
     caret-color: tomato;
+    outline-color: blueviolet;
 }
 .fa-magnifying-glass{
     position: absolute;

@@ -1,3 +1,8 @@
+::-webkit-scrollbar{
+    display: none;
+    scroll-behavior: smooth;
+}
+
 #searchContainer{
     width: 95%;
     margin: 5vh auto;
@@ -21,6 +26,7 @@
 }
 #searchPageContainer .link{
     color: #06275c;
+    font-size: 6vh;
     text-transform: uppercase;
 }
 #searchPageContainer input{
@@ -30,8 +36,12 @@
     border: none;
     border-radius: 1vh;
     caret-color: tomato;
+    outline-color: blueviolet;
 }
-
+.link{
+    color: white;
+    width: 100%;
+}
 #searchListContainer{
     width: 80%;
     margin: 5vh auto;
@@ -116,7 +126,7 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.actions button{
+.actions  button{
     width: 80%;
     padding: 1vh 3vh;
     font-size: 3vh;
@@ -124,7 +134,7 @@
     cursor: pointer;
     border: none;
 }
-.actions button:nth-child(1){
+.actions  button:nth-child(1){
     background-color: #3468bd;
     color: white;
 }
@@ -137,6 +147,24 @@
     transform: scaleX(1.05);
 }
 
+.searching{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.searching img{
+    width: 60vh;
+    height: 60vh !important;
+}
+.searching h1{
+    font-size: 5vh;
+    color: rgb(15, 35, 36);
+}
+.loading{
+    width: 60vh;
+    margin:  7% 30%;
+}
 
 @media screen and (max-width:2000px) {
  
@@ -153,7 +181,9 @@
 }
 
 @media screen and (max-width:1750px) {
- 
+    #searchPageContainer .link{
+        font-size: 4vh;
+    }
     .cardContainer{
         width: 100%;
     }
@@ -187,6 +217,9 @@
         width: 100%;
         padding: 2vh 0;
     }
+    #searchPageContainer .link{
+        font-size: 3.5vh;
+    }
     
     #searchListContainer #filters span{
         padding: 1vh;
@@ -205,6 +238,9 @@
     }
 }
 @media screen and (max-width:1015px) {
+    #searchPageContainer .link{
+        font-size: 2.70vh;
+    }
     .bookDetails>h2{
         font-size: 2.5vh;
         font-weight: 600;
@@ -219,13 +255,24 @@
 }
 
 @media screen and (max-width:700px) {
+    #searchPageContainer .link{
+        font-size: 4vh;
+    }
     #searchListContainer{
         width: 90%;
         margin: 5vh auto;
     }
+    #searchPageContainer{
+        flex-direction: column;
+        gap: 3vh;
+        width: 100%;
+    }
+    #searchPageContainer>input{
+        width: 90%;
+    }
     .cardContainer{
         text-align: start;
-        width: 80%;
+        width: 60%;
         height: 50vh;
         display: flex;
         flex-direction: column;
@@ -233,11 +280,12 @@
         justify-content: space-between;  
     }
     .coverImage{
+        padding-top: 3vh;
         width: 100%;
     }
     .coverImage img{
         width: 100%;
-        height: 15vh !important;
+        height: 23vh !important;
     }
     .actions{
         width: 100%;
@@ -248,6 +296,9 @@
         width: 100%;
         margin: 1vh;
     }
+    #searchPageContainer .link{
+        text-align: center;
+     }
 }
 
 
@@ -259,6 +310,21 @@
     }
     .cardContainer{
         width: 95%;
-        margin: auto;
+        margin: 3vh auto;
+        height: 45vh;
+    }
+    .searching h1{
+        font-size: 3.5vh;
+    }
+
+}
+
+@media screen and (max-width:450px) {
+ 
+    .cardContainer{
+        height: 55vh;
+    }
+    .searching h1{
+        font-size: 3vh;
     }
 }

@@ -19,7 +19,7 @@ const Home = ({ text, setText }) => {
                     </div>
                     <div className='searchField'>
                         <i className="fa-solid fa-magnifying-glass"></i>
-                        <input type='text' placeholder="Search by books name" className='search' autoFocus onChange={(e) => setText(e.target.value)} onKeyPress={redirect} />
+                        <input type='text' placeholder="Search by books name and press enter" className='search' autoFocus onChange={(e) => setText(e.target.value)} onKeyPress={redirect} />
                     </div>
                 </div>
                 <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-library-4349388-3613876.png" alt="Home page side design" />
