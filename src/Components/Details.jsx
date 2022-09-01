@@ -3,7 +3,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Styles/details.css'
 import gif from '../loading.gif';
-var error = "";
+
 const Details = ({ isbn }) => {
   const [detail, setDetail] = useState([]);
   useEffect(() => {
@@ -12,11 +12,16 @@ const Details = ({ isbn }) => {
         for (let x in resp.data)
           setDetail(resp.data[x])
       })
-      .catch(err => { error = err })
+
   }, [isbn])
+
+  const themeSwitch = () => {
+    document.querySelector('body').classList.toggle("darkTheme");
+  }
+
   return (
     <div id="detailsContainer">
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "5%", backgroundColor: "lightgrey", borderTopLeftRadius: "5vh", borderTopRightRadius: "5vh" }}><Link to={'/'} ><h1>Digital Library</h1></Link> <button style={{ color: "white", backgroundColor: "black", border: "none", cursor: "pointer" }} onClick={() => { window.history.go(-1) }}> <i className="fa-solid fa-arrow-left"></i> Go Back </button></div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "2%", backgroundColor: "var(--detailBG)", borderTopLeftRadius: "5vh", borderTopRightRadius: "5vh" }}> <button style={{ color: "white", backgroundColor: "black", border: "none", cursor: "pointer" }} onClick={() => { window.history.go(-1) }}> <i className="fa-solid fa-arrow-left"></i> Go Back </button><Link to={'/'} ><h1>Digital Library</h1></Link> <button style={{ backgroundColor: "var(--buttonBG)", color: "var(--lightblue1)", border: "none", borderRadius: "1vh" }} onClick={themeSwitch}>Change Theme</button></div>
       {detail.length === 0 ? <img src={gif} alt='loading search result' className='loading' /> :
         <>
           <div id="detailsView">
@@ -27,8 +32,8 @@ const Details = ({ isbn }) => {
               <h6> An edition of {detail.details.title} ({detail.details.publish_date})</h6>
               <h3>{detail.details.title}</h3>
 
-              {detail.details.authors !== undefined && <p style={{ fontSize: "3.2vh" }}> by <span style={{ fontSize: "3.2vh", fontWeight: "700", color: "rgb(34, 34, 34)" }}>{detail.details.authors[0].name}</span></p>}
-              <div style={{ backgroundColor: "lightgrey", padding: "5%", marginTop: "1vh", borderRadius: "2vh" }}>
+              {detail.details.authors !== undefined && <p style={{ fontSize: "3.2vh" }}> by <span style={{ fontSize: "3.2vh", fontWeight: "700", color: "var(--colorPara)" }}>{detail.details.authors[0].name}</span></p>}
+              <div style={{ backgroundColor: "var(--detailBG)", padding: "5%", marginTop: "1vh", borderRadius: "2vh" }}>
                 <ul>
                   <li>Publish Date : <span> {detail.details.publish_date}</span></li>
                   <li> Publisher : <span> {detail.details.publishers}</span> </li>

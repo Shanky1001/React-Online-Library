@@ -2,7 +2,7 @@
     width: 95%;
     margin: 5vh auto;
     min-height: 90vh;
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-image: linear-gradient(120deg, var(--lightblue1) 0%, var(--lightblue2) 100%);
     background-size: cover;
     border-radius: 2vh;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -19,10 +19,10 @@
     padding: 15vh 0;
 }
 
-#homeDetailContainer>div>h1{
+#homeDetailContainer div h1{
     font-size: 10vh;
     font-weight: 700;
-    color: #06275c;
+    color: var(--colorlogo);
     text-transform: uppercase;
 }
 #homeDetailContainer>div>p{
@@ -31,6 +31,7 @@
     padding: 2vh 1vh;
     text-align: start;
     font-weight: 400;
+    color: var(--colorPara);
 }
 
 #homeContainer>div>img {

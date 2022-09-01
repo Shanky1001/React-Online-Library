@@ -28,7 +28,6 @@ const SearchCard = ({ val, setISBN }) => {
             </div>
             <div className="actions">
                 <button onClick={detail}> Know More </button>
-                <button>Want to Read</button>
             </div>
         </div>
     )

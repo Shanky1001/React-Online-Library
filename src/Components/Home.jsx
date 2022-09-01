@@ -9,8 +9,12 @@ const Home = ({ text, setText }) => {
             Navigate("/search");
         }
     }
+    const themeSwitch = ()=>{
+            document.querySelector('body').classList.toggle("darkTheme");
+    }
     return (
         <div id="homeContainer">
+            <button style={{float:"right",backgroundColor:"var(--buttonBG)",color:"var(--lightblue1)",border:"none",borderRadius:"1vh"}} onClick={themeSwitch}>Change Theme</button>
             <div>
                 <div id='homeDetailContainer'>
                     <div>
@@ -22,6 +26,7 @@ const Home = ({ text, setText }) => {
                         <input type='text' placeholder="Search by books name and press enter" className='search' autoFocus onChange={(e) => setText(e.target.value)} onKeyPress={redirect} />
                     </div>
                 </div>
+                
                 <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-library-4349388-3613876.png" alt="Home page side design" />
             </div>
         </div>

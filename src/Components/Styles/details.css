@@ -1,14 +1,14 @@
 #detailsContainer {
     width: 60%;
-    margin: 5vh auto;
-    height: fit-content;
+    margin: 4vh auto;
+    height: 90vh;
     box-sizing: border-box;
     border-radius: 5vh;
     box-shadow: 0px 0px 29px 11px rgba(0, 0, 0, 0.76);
 }
 
 h1 {
-    color: #06275c;
+    color: var(--colorlogo);
     font-size: 6vh;
 }
 
@@ -18,11 +18,14 @@ button {
 }
 
 #detailsView {
-    padding: 5% 0;
-    width: 95%;
+    padding: 5%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: start;
+    border-bottom-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+    background-image: linear-gradient(120deg, var(--lightblue1) 0%, var(--lightblue2) 100%);
 }
 
 .bookImage {
@@ -51,21 +54,24 @@ button {
 .aboutBook h6 {
     font-size: 2.75vh;
     font-style: italic;
-    color: rgb(59, 56, 56);
+    color: var(--colorlogo);
 }
 
 .aboutBook h3 {
     font-size: 5vh;
     padding: 1vh 0;
+    color: var(--buttonBG);
 }
 
 .aboutBook li {
     font-size: 3vh;
     padding: 1vh 0 0 0;
+    color: var(--colorPara);
 }
 
 .aboutBook li span {
     font-weight: 600;
+    color: var(--colorPara);
 }
 
 .buttons {
@@ -105,7 +111,6 @@ button {
         width: 80%;
     }
     h1 {
-        color: #06275c;
         font-size: 5vh;
     }
 }
